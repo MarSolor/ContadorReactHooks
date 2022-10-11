@@ -29,7 +29,7 @@ export const CounterApp = ({ value}) => {
     const menosContador = () =>{
         animateCSS("#contador", "bounce");
         
-        //setCounter(counter -1);
+        setCounter(counter -1);
         //! validacion para numeros negativos
         //explicacion debe haber un  numero para cumplir la condicon
         /* if(counter > 0){
