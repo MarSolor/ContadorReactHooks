@@ -29,11 +29,16 @@ export const CounterApp = ({ value}) => {
     const menosContador = () =>{
         animateCSS("#contador", "bounce");
         setCounter(counter -1);
+
+        if(setCounter(value) <=0){
+            
+            value = 0;
+        }
     }
 
     const reset = () =>{
         animateCSS("#contador", "bounce");
-        setCounter(counter  *0);
+        setCounter( value);
     }
 
     return (

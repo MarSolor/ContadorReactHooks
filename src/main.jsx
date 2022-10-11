@@ -13,6 +13,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     ///se define el value un elemento del padre como variable, arreglo, objeto o funcion
     //de cero que sera llamado a por el .jsx
     <React.StrictMode>
-        <CounterApp value={0}/>git
+        <CounterApp value={0}/>
     </React.StrictMode>
 )
