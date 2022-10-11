@@ -10,13 +10,12 @@ import { animateCSS } from "./utils/animate";
 //!functional component
 //desestructuracion
 export const CounterApp = ({ value}) => {
+    //se define una vez para aplicar su el valor que se toma del padre al hook y del hook a las funciones constantes
 
-    //!hook
-
+    //!hook que es el use state
     const [counter, setCounter] = useState(value);//0 es valor inicial 0 se  toma el main 
     // funcion para el evento de clic
     const handleAdd = () =>{
-
         //!utilizar libreria de  animacion
         animateCSS("#contador", "bounce");//contador es el id del h2
         //!cambio de valor
@@ -27,15 +26,25 @@ export const CounterApp = ({ value}) => {
         //setCounter((c) => 200);
     }
 
+    const menosContador = () =>{
+        animateCSS("#contador", "bounce");
+        setCounter(counter -1);
+    }
+
+    const reset = () =>{
+        animateCSS("#contador", "bounce");
+        setCounter(counter  *0);
+    }
+
     return (
         //para tener varios elementos se necesita un nodo padre //!fragmento div sin nada
         /* /* //!proptypes */
         <>
             <h1>CounterApp</h1>
             <h2 id="contador">{counter}</h2>
-            <button onClick= {handleAdd}>
-                Clic:  +1
-            </button>
+            <button onClick= {handleAdd}> Clic:  +1 </button>
+            <button onClick= {menosContador}> Clic:  -1 </button>
+            <button onClick= {reset}> Reset </button>
         </>
     );
 }
